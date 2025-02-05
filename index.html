@@ -1,0 +1,88 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>3D Transformation</title>
+      <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-image: url("https://static1.srcdn.com/wordpress/wp-content/uploads/2022/07/Oppenheimer-Header.jpg");
+          background-size: cover;
+        }
+        h1 {
+          color: white;
+          font-size: 60px;
+          text-transform: uppercase;
+        }
+        .keyframes-demo {
+          width: 100px;
+          height: 100px;
+          background: #f29ad8;
+          position: relative;
+          animation: mymove 5s infinite;
+        }
+
+        @keyframes mymove {
+          from {
+            top: 0px;
+          }
+          to {
+            top: 300px;
+            transform: rotateZ(-360deg) rotateY(90deg) translateX(80px) ;
+          }
+        }
+        /* @keyframes mymove {
+          0% {
+            top: 0px;
+          }
+          25% {
+            top: 200px;
+          }
+          75% {
+            top: 50px;
+          }
+          100% {
+            top: 100px;
+          }
+        } */
+
+        .container {
+          perspective: 800px;
+        }
+
+        .object {
+          width: 300px;
+          height: 200px;
+          display: flex;
+          align-items: center;
+          background-color: #e305ad;
+          transform-style: preserve-3d;
+          animation: rotateAnimation 5s infinite linear;
+        }
+
+        /* @keyframes rotateAnimation {
+          0% {
+            transform: rotateX(0) rotateY(0) rotateZ(0) translateZ(0);
+          }
+          100% {
+            transform: rotateX(180deg)  scaleX(2.1) translateX(100px)
+          }
+        } */
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="keyframes-demo"></div>
+        <!-- <div class="object">
+          <marquee>
+            <h1>HELLO WORLD II</h1>
+          </marquee>
+        </div> -->
+      </div>
+    </body>
+  </html>
